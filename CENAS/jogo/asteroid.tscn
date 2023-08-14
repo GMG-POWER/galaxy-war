@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxhq0m5k7amqg"]
+
+[ext_resource type="Script" path="res://Asteroid.gd" id="1_g260g"]
+[ext_resource type="Texture2D" uid="uid://2riiqohhhqiq" path="res://Uso gráfico/Foozle_2DS0015_Void_EnvironmentPack/Asteroids/PNGs/Asteroid 01 - Base.png" id="2_gfdo6"]
+[ext_resource type="PackedScene" uid="uid://rf1txakkuxta" path="res://CENAS/hitbox.tscn" id="4_mgcom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h66sb"]
+radius = 64.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq5pu"]
+radius = 64.195
+
+[node name="Asteroid" type="CharacterBody2D"]
+script = ExtResource("1_g260g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h66sb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -2)
+rotation = -6.28477
+scale = Vector2(3.11458, 2.55208)
+texture = ExtResource("2_gfdo6")
+
+[node name="hitbox" parent="." instance=ExtResource("4_mgcom")]
+light_mask = 1
+visibility_layer = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_oq5pu")

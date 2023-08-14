@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b752r5o2u7mtv"]
+
+[ext_resource type="Script" path="res://CENAS/laser.gd" id="1_c7li6"]
+[ext_resource type="Texture2D" uid="uid://dga8erjh51alh" path="res://Uso gráfico/Mini Pixel Pack 3/Projectiles/Player_charged_beam (16 x 16).png" id="2_qg20i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h8w2"]
+atlas = ExtResource("2_qg20i")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg7i7"]
+atlas = ExtResource("2_qg20i")
+region = Rect2(16, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kl7s"]
+animations = [{
+"frames": [{
+"duration": 2.1,
+"texture": SubResource("AtlasTexture_6h8w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg7i7")
+}],
+"loop": false,
+"name": &"laser ",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy1x4"]
+size = Vector2(20, 40)
+
+[node name="laser" type="CharacterBody2D"]
+script = ExtResource("1_c7li6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 1.5)
+scale = Vector2(3.375, 3.1875)
+sprite_frames = SubResource("SpriteFrames_6kl7s")
+animation = &"laser "
+autoplay = "laser "
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fy1x4")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://rf1txakkuxta"]
+
+[ext_resource type="Script" path="res://CENAS/hitbox.gd" id="1_vcomy"]
+
+[node name="hitbox" type="Area2D"]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_vcomy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

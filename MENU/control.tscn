@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk81dm3yd5n2f"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_o4n1r"]
+[ext_resource type="Texture2D" uid="uid://dua1bw431itvw" path="res://2023-08-05_11-20.png" id="2_1ug8b"]
+[ext_resource type="FontFile" uid="uid://nkls8r0b2d2p" path="res://texto/QuinqueFive.ttf" id="3_61k0s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o4n1r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 801.0
+offset_bottom = 601.0
+texture = ExtResource("2_1ug8b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 67.0
+offset_right = 698.0
+offset_bottom = 514.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 28
+text = "PONTUACao"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 23
+text = "NOME DO JOGADOR:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 23
+text = "score:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="nomedojogador1" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 23
+
+[node name="score" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 23

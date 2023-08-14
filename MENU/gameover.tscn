@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dof3067u8tgn6"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_o2owr"]
+[ext_resource type="Texture2D" uid="uid://dua1bw431itvw" path="res://2023-08-05_11-20.png" id="2_paotx"]
+[ext_resource type="Texture2D" uid="uid://clsx1jnnh226v" path="res://Uso gráfico/Mini Pixel Pack 3/UI objects/GAME_OVER (72 x 8).png" id="3_mtpn0"]
+[ext_resource type="FontFile" uid="uid://nkls8r0b2d2p" path="res://texto/QuinqueFive.ttf" id="4_6skd8"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2owr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_paotx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(408, 180)
+scale = Vector2(4.61111, 14.125)
+texture = ExtResource("3_mtpn0")
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 389.0
+offset_right = 570.0
+offset_bottom = 438.0
+theme_override_fonts/font = ExtResource("4_6skd8")
+theme_override_font_sizes/font_size = 31
+text = "VOLTAR"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

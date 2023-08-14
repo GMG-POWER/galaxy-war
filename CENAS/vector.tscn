@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3xvkkuhbqc0y"]
+
+[ext_resource type="Texture2D" uid="uid://5tvh1t2sgdvc" path="res://Uso gráfico/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_ml26y"]
+[ext_resource type="Texture2D" uid="uid://bilqywj34vw2x" path="res://Uso gráfico/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Supercharged Engine - Powering.png" id="2_ajxke"]
+[ext_resource type="PackedScene" uid="uid://bjcrkjaf3r1s0" path="res://CENAS/jogo/damage.tscn" id="3_ygoqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_touqo"]
+atlas = ExtResource("2_ajxke")
+region = Rect2(0, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkt7m"]
+atlas = ExtResource("2_ajxke")
+region = Rect2(48, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inwti"]
+atlas = ExtResource("2_ajxke")
+region = Rect2(96, 0, 24, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdcjb"]
+atlas = ExtResource("2_ajxke")
+region = Rect2(144, 0, 24, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g5ot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_touqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkt7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inwti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdcjb")
+}],
+"loop": true,
+"name": &"14bis",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dneq"]
+radius = 39.1152
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c437x"]
+radius = 37.1079
+
+[node name="Vector" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -7.49992)
+scale = Vector2(2.25, 2.10417)
+texture = ExtResource("1_ml26y")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.99999, 2.00008)
+scale = Vector2(1.79167, 1.46875)
+sprite_frames = SubResource("SpriteFrames_2g5ot")
+animation = &"14bis"
+autoplay = "14bis"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.00008)
+shape = SubResource("CircleShape2D_8dneq")
+
+[node name="damage" parent="." instance=ExtResource("3_ygoqm")]
+position = Vector2(0, 8.39233e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+shape = SubResource("CircleShape2D_c437x")

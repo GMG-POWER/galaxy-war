@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfe1hnvua6lvr"]
+
+[ext_resource type="Script" path="res://MENU/menu.gd" id="1_krkrh"]
+[ext_resource type="Texture2D" uid="uid://dua1bw431itvw" path="res://2023-08-05_11-20.png" id="2_55ulf"]
+[ext_resource type="FontFile" uid="uid://nkls8r0b2d2p" path="res://texto/QuinqueFive.ttf" id="3_km5qf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3uvbn"]
+font = ExtResource("3_km5qf")
+font_size = 33
+font_color = Color(0, 0.827451, 0.411765, 1)
+
+[node name="MENU" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krkrh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_55ulf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 503.0
+offset_right = 691.0
+offset_bottom = 553.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "DEV. BY "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer" groups=["botões"]]
+layout_mode = 2
+focus_mode = 0
+text = "2G+"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 64.0
+offset_right = 664.0
+offset_bottom = 464.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GALAXY WAR"
+label_settings = SubResource("LabelSettings_3uvbn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="JOGAR" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["botões"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_km5qf")
+theme_override_font_sizes/font_size = 30
+text = "JOGAR"
+
+[node name="POTUAÇÕES" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["botões"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_km5qf")
+theme_override_font_sizes/font_size = 30
+text = "pontuacao"
+
+[node name="SAIR" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["botões"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_km5qf")
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/JOGAR" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/POTUAÇÕES" to="." method="_on_potuações_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SAIR" to="." method="_on_sair_pressed"]

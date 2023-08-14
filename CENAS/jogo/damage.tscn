@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjcrkjaf3r1s0"]
+
+[ext_resource type="Script" path="res://damage.gd" id="1_xsdcv"]
+
+[node name="damage" type="Area2D"]
+script = ExtResource("1_xsdcv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
