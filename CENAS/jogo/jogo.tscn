@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dihkeeryw7d2a"]
+[gd_scene load_steps=6 format=3 uid="uid://dihkeeryw7d2a"]
 
 [ext_resource type="Script" path="res://CENAS/jogo/jogo.gd" id="1_ba8p4"]
 [ext_resource type="PackedScene" uid="uid://csutty5cvyjmn" path="res://CENAS/jogo/plano_de_fundo.tscn" id="1_u74lf"]
 [ext_resource type="PackedScene" uid="uid://b3xvkkuhbqc0y" path="res://CENAS/vector.tscn" id="3_0ggf5"]
+[ext_resource type="AudioStream" uid="uid://42cj1rd70igw" path="res://SnapInsta.io - Yabure Kabure (Lyrics) - Nyanpasu _ ya bure ya bure (128 kbps).mp3" id="5_0s0xc"]
 [ext_resource type="FontFile" uid="uid://nkls8r0b2d2p" path="res://texto/QuinqueFive.ttf" id="5_1oew1"]
 
 [node name="JOGO" type="Node2D"]
@@ -74,6 +75,11 @@ autostart = true
 offset_left = 298.0
 offset_right = 502.0
 offset_bottom = 42.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0s0xc")
+volume_db = -19.102
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Clock_timer" to="." method="_on_clock_timer_timeout"]

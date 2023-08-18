@@ -54,7 +54,7 @@ func _process(delta):
 func _on_clock_timer_timeout():
 	if seconds == 10:
 		cria()
-	if seconds == 59:
+	if seconds == 60:
 		if minutes >= 0: 
 			minutes += 1
 			seconds = 0

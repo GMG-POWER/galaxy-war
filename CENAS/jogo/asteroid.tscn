@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://rf1txakkuxta" path="res://CENAS/hitbox.tscn" id="4_mgcom"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h66sb"]
-radius = 64.2
+radius = 64.19
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oq5pu"]
 radius = 64.195
