@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.data_dictionary.pontuacao = Global.pontuacao
 	pass # Replace with function body.
 
 

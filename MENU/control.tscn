@@ -56,12 +56,14 @@ alignment = 1
 [node name="nomedojogador1" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_61k0s")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 26
+text = "name"
 
 [node name="score" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_61k0s")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 24
+text = "10"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

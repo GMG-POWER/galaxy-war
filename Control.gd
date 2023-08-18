@@ -1,18 +1,20 @@
 extends Control
 
-var nome: Label
 
+@onready var nomedojogador_1 = $VBoxContainer/HBoxContainer2/nomedojogador1
+var score: Label
 
 
 func _ready():
-	nome = $VBoxContainer/HBoxContainer2/nomedojogador1
-	nome.text = Global.data_dictionary.nomedojogador
-	var nonome : String = nome.text
+	var nonome : String = nomedojogador_1.text
+	nomedojogador_1.text = Global.data_dictionary.nomedojogador
+	score = $VBoxContainer/HBoxContainer2/score
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	score.text = str(Global.data_dictionary.pontuacao)
 	pass
 
 
