@@ -9,7 +9,7 @@ func _on_jogar_pressed():
 
 
 func _on_potuações_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://MENU/control.tscn")
 
 
 

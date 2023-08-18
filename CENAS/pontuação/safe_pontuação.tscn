@@ -69,6 +69,6 @@ theme_override_fonts/font = ExtResource("2_nmogs")
 theme_override_font_sizes/font_size = 30
 text = "VOLTAR"
 
-[connection signal="pressed" from="VBoxContainer2/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer2/continuar" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer2/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer2/voltar" to="." method="_on_voltar_pressed"]

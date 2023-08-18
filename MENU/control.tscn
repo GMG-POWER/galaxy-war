@@ -23,8 +23,8 @@ texture = ExtResource("2_1ug8b")
 layout_mode = 0
 offset_left = 106.0
 offset_top = 67.0
-offset_right = 698.0
-offset_bottom = 514.0
+offset_right = 726.0
+offset_bottom = 469.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -62,3 +62,15 @@ theme_override_font_sizes/font_size = 23
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_61k0s")
 theme_override_font_sizes/font_size = 23
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 520.0
+offset_right = 583.0
+offset_bottom = 578.0
+theme_override_fonts/font = ExtResource("3_61k0s")
+theme_override_font_sizes/font_size = 30
+text = "VOLTAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
